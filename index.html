@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <title>Outfit Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="title-banner" class="jumbotron">
+        <h1>Cher's Closet</h1>
+      </div>
+      <div id="input-section">
+        <form id="survey">
+          <div class="input-group">
+            <p>What's the weather like outside today?</p>
+            <div class="form-group">
+              <div class="radio">
+                <label><input type="radio" name="weather" value="Sunny">Sunny</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="weather" value="Rainy">Rainy</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="weather" value="Windy">Windy</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="weather" value="Snowy">Snowy</label>
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <p>What's the occasion?</p>
+            <div class="radio">
+              <label><input type="radio" name="occasion" value="Formal">Formal</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="occasion" value="Casual">Casual</label>
+            </div>
+          </div>
+          <button type="submit" name="button" class="btn btn-info">Submit</button>
+        </form>
+      </div>
+      <div id="outfit-section">
+
+      </div>
+
+    </div>
+  </body>
+</html>
