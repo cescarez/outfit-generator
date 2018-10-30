@@ -39,6 +39,8 @@ $(document).ready(function() {
     event.preventDefault();
     var weather = $("input:radio[name=weather]:checked").val();
     var occasion = $("input:radio[name=occasion]:checked").val();
+    $("#outfits").show();
+    console.log(weather + " " + occasion);
 });
 
 
