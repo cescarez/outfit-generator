@@ -1,6 +1,28 @@
-function Outfit(top, bottom) {
+function Outfit(top, bottom, weather, occasion) {
   this.top = 0;
   this.bottom = 0;
+  this.weather = weather;
+  this.occasion = occasion;
+};
+
+Outfit.prototype.options = function() {
+  if (this.weather === "Sunny" && this.occasion === "Casual") {
+    //show them these combo of clothes
+  } else if (this.weather === "Sunny" && this.occasion === "Formal") {
+    //show them these combo of clothes
+  } else if (this.weather === "Rainy" && this.occasion === "Casual") {
+    //show them these combo of clothes
+  } else if (this.weather === "Rainy" && this.occasion === "Formal") {
+    //show them these combo of clothes
+  } else if (this.weather === "Windy" && this.occasion === "Casual") {
+    //show them these combo of clothes
+  } else if (this.weather === "Windy" && this.occasion === "Formal") {
+    //show them these combo of clothes
+  } else if (this.weather === "Snowy" && this.occasion === "Casual") {
+    //show them these combo of clothes
+  } else {
+    //show them these combo of clothes
+  }
 };
 
 Outfit.prototype.match = function() {
@@ -13,13 +35,12 @@ Outfit.prototype.match = function() {
 
 $(document).ready(function() {
 
-  // $("#selector form").submit(function(event) {
-  //   event.preventDefault();
-  //   var answer1 = parseInt($("input:radio[name=first-input]:checked").val());
-  //   var answer2 = parseInt($("input:radio[name=second-input]:checked").val());
-  //   var answer3 = parseInt($("input:radio[name=third-input]:checked").val());
-  //   var answer4 = parseInt($("input:radio[name=fourth-input]:checked").val());
-  //   var answer5 = parseInt($("input:radio[name=fifth-input]:checked").val());
+  $("#survey").submit(function(event) {
+    event.preventDefault();
+    var weather = $("input:radio[name=weather]:checked").val();
+    var occasion = $("input:radio[name=occasion]:checked").val();
+});
+
 
   $("form#outfits").click(function(event) {
     event.preventDefault();
@@ -27,4 +48,5 @@ $(document).ready(function() {
     var bottom = $("#bottoms").val();
     var newOutfit = new Outfit(top, bottom);
     newOutfit.match();
+  });
 });
