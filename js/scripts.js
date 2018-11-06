@@ -7,7 +7,8 @@ function Outfit(top, bottom, weather, occasion) {
 
 Outfit.prototype.options = function() {
   if (this.weather === "Sunny" && this.occasion === "Casual") {
-    //show them these combo of clothes
+    $("#col1row2").prepend('<img src = "img/yellow-plaid-skirt.jpg"/>')
+    console.log("test test test")
   } else if (this.weather === "Sunny" && this.occasion === "Formal") {
     //show them these combo of clothes
   } else if (this.weather === "Rainy" && this.occasion === "Casual") {
@@ -33,20 +34,26 @@ Outfit.prototype.match = function() {
   }
 };
 
+// User Interface Logic
+
 $(document).ready(function() {
 
   $("#survey").submit(function(event) {
     event.preventDefault();
     var weather = $("input:radio[name=weather]:checked").val();
     var occasion = $("input:radio[name=occasion]:checked").val();
+    var newOutfit = new Outfit (0, 0, weather, occasion);
+    console.log(newOutfit);
+    newOutfit.options();
 });
 
 
-  $("form#outfits").click(function(event) {
+  $("#browse-btn").click(function(event) {
     event.preventDefault();
     var top = $("#tops").val();
     var bottom = $("#bottoms").val();
-    var newOutfit = new Outfit(top, bottom);
+    newOutfit.top = top;
+    newOutfit.bottom = bottom;
     newOutfit.match();
   });
 });
