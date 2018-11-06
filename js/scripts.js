@@ -1,3 +1,5 @@
+var newOutfit = {};
+
 function Outfit(top, bottom, weather, occasion) {
   this.top = 0;
   this.bottom = 0;
@@ -42,7 +44,7 @@ $(document).ready(function() {
     event.preventDefault();
     var weather = $("input:radio[name=weather]:checked").val();
     var occasion = $("input:radio[name=occasion]:checked").val();
-    var newOutfit = new Outfit (0, 0, weather, occasion);
+    newOutfit = new Outfit (0, 0, weather, occasion);
     console.log(newOutfit);
     newOutfit.options();
 });
@@ -50,10 +52,11 @@ $(document).ready(function() {
 
   $("#browse-btn").click(function(event) {
     event.preventDefault();
-    var top = $("#tops").val();
-    var bottom = $("#bottoms").val();
+    var top = $("input:radio[name=tops]:checked").val();
+    var bottom = $("input:radio[name=bottoms]:checked").val();
     newOutfit.top = top;
     newOutfit.bottom = bottom;
     newOutfit.match();
+    console.log(newOutfit);
   });
 });
