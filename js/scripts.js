@@ -9,30 +9,69 @@ function Outfit(top, bottom, weather, occasion) {
 
 Outfit.prototype.options = function() {
   if (this.weather === "Sunny" && this.occasion === "Casual") {
-    $("#col1row2").prepend('<img src = "img/yellow-plaid-skirt.jpg"/>')
-    console.log("test test test")
+    $("#col1row1").prepend('<img src = "img/SuCT3WCB3.jpg/>')
+    $("#col1row2").prepend('<img src = "img/allCB.jpg"/>')
+    $("#col2row1").prepend('<img src = "img/SuCT2.jpg"/>')
+    $("#col2row2").prepend('<img src = "img/allCB2.jpg"/>')
+    $("#col3row1").prepend('<img src = "img/SnCT3RCT1.jpg"/>')
+    $("#col3row2").prepend('<img src = "img/SuCB2.jpg"/>')
   } else if (this.weather === "Sunny" && this.occasion === "Formal") {
-    //show them these combo of clothes
+    $("#col1row1").prepend('<img src = "img/allFT.jpg"/>')
+    $("#col1row2").prepend('<img src = "img/allFB.jpg"/>')
+    $("#col2row1").prepend('<img src = "img/WFT2SuFT1.jpg"/>')
+    $("#col2row2").prepend('<img src = "img/allFB2.jpg"/>')
+    $("#col3row1").prepend('<img src = "img/SuFT3RFT3.jpg"/>')
+    $("#col3row2").prepend('<img src = "img/allFB3.jpg"/>')
   } else if (this.weather === "Rainy" && this.occasion === "Casual") {
-    //show them these combo of clothes
+    $("#col1row1").prepend('<img src = "img/RCT2.jpg"/>')
+    $("#col1row2").prepend('<img src = "img/RCB3SuCB3.jpg"/>')
+    $("#col2row1").prepend('<img src = "img/RCT3.jpg"/>')
+    $("#col2row2").prepend('<img src = "img/allCB.jpg"/>')
+    $("#col3row1").prepend('<img src = "img/SnCT3RCT1.jpg"/>')
+    $("#col3row2").prepend('<img src = "img/allCB2.jpg"/>')
   } else if (this.weather === "Rainy" && this.occasion === "Formal") {
-    //show them these combo of clothes
+    $("#col1row1").prepend('<img src = "img/RFT2SnF3.jpg"/>')
+    $("#col1row2").prepend('<img src = "img/allFB.jpg"/>')
+    $("#col2row1").prepend('<img src = "img/allFT.jpg"/>')
+    $("#col2row2").prepend('<img src = "img/allFB2.jpg"/>')
+    $("#col3row1").prepend('<img src = "img/SuFT3RFT3.jpg"/>')
+    $("#col3row2").prepend('<img src = "img/allFB3.jpg"/>')
   } else if (this.weather === "Windy" && this.occasion === "Casual") {
-    //show them these combo of clothes
+    $("#col1row1").prepend('<img src = "img/WCT1SnCT1WCT1.jpg"/>')
+    $("#col1row2").prepend('<img src = "img/RCB3SuCB3.jpg"/>')
+    $("#col2row1").prepend('<img src = "img/WCT2SnCT2WCT2.jpg"/>')
+    $("#col2row2").prepend('<img src = "img/allCB.jpg"/>')
+    $("#col3row1").prepend('<img src = "img/WCT3SuCT1.jpg"/>')
+    $("#col3row2").prepend('<img src = "img/allCB2.jpg"/>')
   } else if (this.weather === "Windy" && this.occasion === "Formal") {
-    //show them these combo of clothes
+    $("#col1row1").prepend('<img src = "img/WFT2SuFT1.jpg"/>')
+    $("#col1row2").prepend('<img src = "img/allFB.jpg"/>')
+    $("#col2row1").prepend('<img src = "img/SnT1WT1.jpg"/>')
+    $("#col2row2").prepend('<img src = "img/allFB2.jpg"/>')
+    $("#col3row1").prepend('<img src = "img/SnFT2WFT2.jpg"/>')
+    $("#col3row2").prepend('<img src = "img/allFB3.jpg"/>')
   } else if (this.weather === "Snowy" && this.occasion === "Casual") {
-    //show them these combo of clothes
+    $("#col1row1").prepend('<img src = "img/WCT1SnCT1WCT1.jpg"/>')
+    $("#col1row2").prepend('<img src = "img/SnCB3.jpg"/>')
+    $("#col2row1").prepend('<img src = "img/WCT2SnCT2WCT2.jpg"/>')
+    $("#col2row2").prepend('<img src = "img/allCB.jpg"/>')
+    $("#col3row1").prepend('<img src = "img/SnFT2WFT2.jpg"/>')
+    $("#col3row2").prepend('<img src = "img/allCB2.jpg"/>')
   } else {
-    //show them these combo of clothes
+    $("#col1row1").prepend('<img src = "img/SnFT2WFT2.jpg"/>')
+    $("#col1row2").prepend('<img src = "img/allFB.jpg"/>')
+    $("#col2row1").prepend('<img src = "img/SnT1WT1.jpg"/>')
+    $("#col2row2").prepend('<img src = "img/allFB2.jpg"/>')
+    $("#col3row1").prepend('<img src = "img/SuFT3RFT3.jpg"/>')
+    $("#col3row2").prepend('<img src = "img/allFB3.jpg"/>')
   }
 };
 
 Outfit.prototype.match = function() {
   if (this.top === this.bottom) {
-    console.log("This is a match!")
+    alert("This is a match!")
   } else {
-    console.log("No way! Try again.")
+    alert("No way! Try again.")
   }
 };
 
@@ -47,6 +86,9 @@ $(document).ready(function() {
     newOutfit = new Outfit (0, 0, weather, occasion);
     console.log(newOutfit);
     newOutfit.options();
+    $("#clothes").show();
+    $("#input-section").hide();
+
 });
 
 
